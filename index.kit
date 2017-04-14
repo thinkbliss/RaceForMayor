@@ -1,0 +1,117 @@
+<!doctype html>
+<html class="no-js" lang="en">
+     <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Rahm for Chicago</title>
+        <link rel="stylesheet" href="css/site.css" />
+        <!--<script src="//use.typekit.net/vvt4yoq.js"></script> --> <!-- Metronoome3 account to be reactivated upon launch -->
+        <!--<script>try{Typekit.load();}catch(e){}</script>-->
+        
+        <script src="//use.typekit.net/amx7nmd.js"></script>
+        <script>try{Typekit.load();}catch(e){}</script>        
+        
+    <script src="js/modernizr.js"></script>
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn-history/r358/trunk/infobox/src/infobox.js"></script>
+    <script type="text/javascript" src="js/map.js"></script>               
+            
+    </head>
+    <body onload="initialize()">
+        <!-- @import includes/_header.kit -->
+        <div class="large-15">
+            <div class="heroContainer map">
+                <div id="map"></div>
+                <div class="row">
+                    <div class="geoBox">
+                        <h2>WORKING WITH EVERY NEIGHBORHOOD FOR A BETTER AND STRONGER FUTURE.</h2>
+                        <p>See what we’re working on near you.</p>
+                        <form action="#">
+                            <input type="text" class="geoEmail" name="geoEmail" placeholder="Email">
+                            <input type="text" class="geoZip" name="geoZip" placeholder="Zip code">   
+                            <button>find us</button>
+                        </form>        
+                        <p>NEIGHBORHOOD INITIATIVES</p>
+                        <div class="iconList">
+                            <ul>
+                                <li>
+                                    <input type="checkbox" id="storiesbox" onclick="boxclick(this,'stories')" />
+                                    <label for="storiesbox"><img src="images/icon-play.png" alt="" /></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="parksbox" onclick="boxclick(this,'parks')" />
+                                    <label for="parksbox"><img src="images/icon-trees.png" alt="" /></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="infrastructurebox" onclick="boxclick(this,'infrastructure')" />
+                                    <label for="infrastructurebox"><img src="images/icon-road.png" alt="" /></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="economicbox" onclick="boxclick(this,'economic')" />
+                                    <label for="economicbox"><img src="images/icon-graph.png" alt="" /></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="environmentbox" onclick="boxclick(this,'environment')" />
+                                    <label for="environmentbox"><img src="images/icon-plant.png" alt="" /></a>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="educationbox" onclick="boxclick(this,'education')" />
+                                    <label for="educationbox"><img src="images/icon-book.png" alt="" /></label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- @import includes/_nav.kit -->
+        <!-- 
+        <nav>
+            <div class="row">
+                <ul>
+                    <li><a href="#">TAKE ACTION</a></li>
+                    <li><a href="#">FACTS</a></li>
+                    <li><a href="#">LATEST</a></li>       
+                </ul>
+            </div>
+        </nav>
+        -->
+        
+        <div class="contentContainer">
+            <div class="row touts">
+                <div class="large-4 columns">
+                    <img src="images/fpo-tout.jpg"/>
+                </div>
+
+                <div class="large-4 columns">
+                    <img src="images/fpo-tout.jpg"/>
+                </div>
+
+                <div class="large-4 columns">
+                    <img src="images/fpo-tout.jpg"/>
+                </div>
+            </div> 
+            <div class="row">
+                <!-- @import includes/postList.kit -->
+                <div class="large-4 columns right rightRail">
+                    <ul>
+                        <li><a href="#"><span class="picto news">m</span>SIGN UP, BE THE<br/>FIRST TO KNOW</a></li>
+                        <li><a href="#"><span class="picto face">G</span>LIKE US</a></li>
+                        <li><a href="#"><span class="socialico tweet">L</span>FOLLOW US</a></li>
+                        <li><a href="#"><span class="picto magnify">y</span>SEE PROGRESS IN<br/>YOUR NEIGHBORHOOD</a></li>
+                        <li><a href="#"><span class="picto share">b</span>SHARE YOUR STORY</a></li>
+                        <li><a class="donateMod" href="#"><span class="picto donate">$</span>DONATE</a></li>
+                    </ul>
+                </div>                
+            </div>
+        </div>
+        <!-- @import includes/_footer.kit -->
+
+        
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/foundation/js/foundation.min.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>

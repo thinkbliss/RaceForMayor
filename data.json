@@ -1,0 +1,90 @@
+[
+    {
+        "name":"Groesbeck House",
+        "url":"http://www.google.com",
+        "place":"1304 W. Washington Blvd.",
+        "thumbUrl": "",
+        "video": "<iframe width='340' height='180' src='//www.youtube.com/embed/q_FllscxWSc?rel=0&autoplay=0&showinfo=0&controls=0'><\/iframe>",
+        "shortDesc": "Lorem ipsum dolor sit amet, egestas elit eget libero vehicula nullam, dictum condimentum erat quisque ut donec. Natoque elementum nunc pellentesque dictumst rutrum, odio eget, et ac nonummy ligula aliquam, aliquam id quam malesuada fermentum, adipiscing volutpat neque varius aliquam varius.",
+        "thumbnail": "",
+        "ltt":41.8831875,
+        "lgt":-87.6600496,
+        "cat":"stories"
+    },
+    {
+        "name":"Metropolitan Missionary Baptist Church",
+        "url":"http://www.google.com",
+        "place":"2151 W. Washington Blvd.",
+        "thumbUrl": "",
+        "video": "<iframe width='340' height='180' src='//www.youtube.com/embed/wawnDf50-3E?rel=0&autoplay=0&showinfo=0&controls=0'></iframe>",
+        "thumbnail": "",
+        "shortDesc": "Lorem ipsum dolor sit amet, egestas elit eget libero vehicula nullam, dictum condimentum erat quisque ut donec. Natoque elementum nunc pellentesque dictumst rutrum, odio eget, et ac nonummy ligula aliquam, aliquam id quam malesuada fermentum, adipiscing volutpat neque varius aliquam varius.",
+        "ltt":41.883066,
+        "lgt":-87.681135,
+        "cat":"stories"
+    },
+    {
+        "name":"Engine Company 5, Truck 2",
+        "url":"http://www.google.com",
+        "place":"324 S. Desplaines St.",
+        "ltt":41.8772226,
+        "lgt":-87.6442087,
+        "cat":"stories"
+    },
+    {
+        "name":"Chicago Harbor Lighthouse",
+        "url":"http://www.google.com",
+        "place":"South End of the North Breakwater, North Side of the Chicago Harbor Entrance",
+        "ltt":41.944840,
+        "lgt":-87.637985,
+        "cat":"parks"
+    },
+    {
+        "name":"Herald Square Monument",
+        "url":"http://www.google.com",
+        "place":"Wacker Drive at Wabash Avenue",
+        "ltt":41.8871573,
+        "lgt":-87.6265012,
+        "cat":"environment"
+    },
+    {
+        "name":"Indian Boundary Park Fieldhouse",
+        "url":"http://www.google.com",
+        "place":"2500 W. Lunt Ave.",
+        "ltt":42.0086163,
+        "lgt":-87.6922631,
+        "cat":"parks"
+    },   
+    {
+        "name":"Site of the Origin of the Chicago Fire of 1871",
+        "url":"http://www.google.com",
+        "place":"Dekoven and Jefferson Streets",
+        "ltt":41.8681774,
+        "lgt":-87.642216,
+        "cat":"economic"
+    }, 
+    {
+        "name":"Schoenhofen Brewery",
+        "url":"http://www.google.com",
+        "place":"18th Street and Canalport Ave.",
+        "ltt":41.8576515,
+        "lgt":-87.6399195,
+        "cat":"economic"
+    },
+    {
+        "name":"On Leong Merchants Association Building",
+        "url":"http://www.google.com",
+        "place":"2216 S. Wentworth Ave.",
+        "ltt":41.8523969,
+        "lgt":-87.6322911,
+        "cat":"infrastructure"
+    },
+    {
+        "name":"Northwestern University Settlement House",
+        "url":"http://www.google.com",
+        "place":"2216 S. Wentworth Ave.",
+        "ltt":41.9000176,
+        "lgt":-87.6627352,
+        "cat":"education"
+    }         
+]

@@ -1,0 +1,16 @@
+{
+  "name": "Rahm for Chicago",
+  "description": "Rahm for Chicago",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "4.x",
+    "jade": "^1.6.0"
+  },
+  "devDependencies": {
+    "node-sass": "~0.9.3",
+    "grunt": "~0.4.1",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-sass": "~0.8.1",
+  },    
+}

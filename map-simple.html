@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Foundation</title>
+        <link rel="stylesheet" href="css/site.css" />
+        <!--<script src="//use.typekit.net/vvt4yoq.js"></script> --> <!-- Metronoome3 account to be reactivated upon launch -->
+        <!--<script>try{Typekit.load();}catch(e){}</script>-->
+        
+        <script src="//use.typekit.net/amx7nmd.js"></script>
+        <script>try{Typekit.load();}catch(e){}</script>        
+        
+        <script src="bower_components/modernizr/modernizr.js"></script>
+        <!-- Include the Google Maps API library - required for embedding maps -->
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript">
+                var markers = [
+                        {
+                            "title": 'Montgomery Ward & Co. Catalog',
+                            "lat": '41.8969173',
+                            "lng": '-87.6435474', 
+                            "description": 'Montgomery Ward & Co. Catalog House first large mail-order catalog businesses, which was founded in 1872 by A. Montgomery Ward and George Thorne. The Catalog House is a visual "landmark" along the North Branch of the Chicago River, closely hugging the riverbank with its dramatic, curving, 600-foot-long, trapezoidal form. This is one of the best examples of a Chicago School-style industrial building and a pioneering example of large-scale reinforced-concrete construction. Noted architectural historian Carl Condit said: "This building stands by itself as one of the most powerful works of utilitarian architecture that our building art has produced." The buildings geometric terra-cotta ornament is a rich, subtle variation on the modern decoration common to several Chicago School architects, including Louis H. Sullivan and Frank Lloyd Wright. The building is listed as a National Historic Landmark due to its significance in the history of American retailing and association with A. Montgomery Ward. A later administration building (1929) and north additions (1917 and 1940) are not part of the Chicago Landmark designation.'
+                        },
+                        {
+                            "title": 'Assumption School',
+                            "lat": '41.893724',
+                            "lng": '-87.636539',
+                            "description": 'Assumption School was built in 1899 by Assumption Church and was an important educational institution in Chicagos earliest Italian immigrant community on the Near North Side. The school was founded by Mother Francis Xavier Cabrini (1850-1917), a nationally significant figure in the history of education, health care and social welfare and the first American to be canonized by the Roman Catholic Church. The school is the most intact building associated with her numerous charitable undertakings in the city. Designed in the Beaux Arts style by architect Frederick Foltz (1843-1916), the school is a distinctive example of a late-nineteenth century urban school building. The Assumption School Building is distinguished by its fine brick- and stonework, exuberant classically-inspired ornament and ornate copper cornice.'
+                        },
+                        {
+                            "title": 'LaSalle Street Cable Car Powerhouse',
+                            "lat": '41.8908018',
+                            "lng": '-87.6326869',
+                            "description": 'The LaSalle Street Cable Car Powerhouse is a rare surviving artifact of Chicagos cable car system, which at its peak in the 1890s was the largest in the country, operating thousands of cable cars over 82 miles of track. The powerhouse was built by the North Chicago Street Railroad Company organized by Charles Tyson Yerkes, the leading transit entrepreneur in Chicago during the late 19th century. At the height of his influence, Yerkes controlled eight separate street railway companies and 250 miles of track in the city.<br/><br/>The powerhouse was constructed to house engines that moved two miles of cable through channels laid in streets on the Near North Side and in the Loop business district. Those cables, in turn, pulled the thousands of cable cars that, at the peak of their operation, brought approximately 100,000 workers into downtown Chicago each day. The LaSalle Street Cable Car Powerhouse helped make possible the rapid development of the citys outlying North Side neighborhoods during one of the greatest boom periods in the history of Chicago.'
+                        },
+                        {
+                            "title": 'Reid, Murdoch & Co. Building',
+                            "lat": '41.8883337',
+                            "lng": '-87.6315171',
+                            "description": 'Combining elements of both the Chicago and Prairieschools of architecture, this is one of the citys finest examples of industrial design and a rare reminder of the type of buildings that once lined the Chicago River. Built as a warehouse and office building for a wholesale grocery company, it was one of the first designs to respond to the 1909 Plan for Chicagos goal for riverfront redevelopment: docking facilities are recessed at the water level, while a promenade extends at street level. A bold Chicago School-style exterior highlights the buildings steel-and-concrete supporting frame, which is further enhanced by excellent brickwork and terra-cotta details. A central tower provides a strong counterpoint to the general horizontality of the structure, making this one of the best-known buildings along the Chicago River.'
+                        }
+                ];
+                window.onload = function () {
+                    var mapOptions = {
+                        center: new google.maps.LatLng(markers[0].lat, markers[0].lng),
+                        zoom: 14,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                    };
+                    var infoWindow = new google.maps.InfoWindow();
+                    var map = new google.maps.Map(document.getElementById("dvMap"), mapOptions);
+                    var i = 0;
+                    var interval = setInterval(function () {
+                        var data = markers[i]
+                        var myLatlng = new google.maps.LatLng(data.lat, data.lng);
+                        var marker = new google.maps.Marker({
+                            position: myLatlng,
+                            map: map,
+                            title: data.title,
+                            animation: google.maps.Animation.DROP
+                        });
+                        (function (marker, data) {
+                            google.maps.event.addListener(marker, "click", function (e) {
+                                infoWindow.setContent(data.title && data.description);
+                                infoWindow.open(map, marker);
+                            });
+                        })(marker, data);
+                        i++;
+                        if (i == markers.length) {
+                            clearInterval(interval);
+                        }
+                    }, 200);
+                }
+            </script>
+    <body>
+        <div class="large-15">
+            <div class="heroContainer">
+                <div id="dvMap"></div>
+                    <div class="row">
+                        <div class="geoBox">
+                            <h2>WORKING WITH EVERY NEIGHBORHOOD FOR A BETTER AND STRONGER FUTURE.</h2>
+                            <p>See what we’re working on near you.</p>
+                            <form>
+                                <input type="text" class="signUpEmail" name="signUpEmail-hero" placeholder="Email">
+                                <input type="text" class="signUpZip" name="signUpZip-hero" placeholder="Zip code">   
+                                <button>Sign up</button>
+                            </form>        
+                            <p>NEIGHBORHOOD INITIATIVES</p>
+                            <div class="iconList">
+                                <ul>
+                                    <li><a href="#"><img src="images/icon-play.png" alt="Play Video" /></a></li>
+                                    <li><a href="#"><img src="images/icon-trees.png" alt="Play Video" /></a></li>
+                                    <li><a href="#"><img src="images/icon-road.png" alt="Play Video" /></a></li>
+                                    <li><a href="#"><img src="images/icon-graph.png" alt="Play Video" /></a></li>
+                                    <li><a href="#"><img src="images/icon-plant.png" alt="Play Video" /></a></li>
+                                    <li><a href="#"><img src="images/icon-book.png" alt="Play Video" /></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- @import includes/_footer.html -->
+<!-- 
+        <footer>
+            <div class="row">
+                <div class="footerContent">
+                    <div class="large-3 columns">
+                        <img src="images/logo-footer.png" />
+                    </div>
+                    <div class="large-3 columns">
+                        <h5>TAKE ACTION</h5> 
+                        <ul>
+                            <li><a href="#">SIGN UP</a></li>
+                            <li><a href="#">SHARE YOUR STORY</a></li>
+                            <li><a href="#">SEE PROGRESS IN YOUR NEIGHBORHOOD</a></li>
+                            <li><a href="#">DONATE</a></li>
+                        </ul>
+                    </div>
+                    <div class="large-3 columns">
+                        <h5>FACTS</h5> 
+                        <ul>
+                            <li><a href="#">ABOUT</a></li>
+                            <li><a href="#">NEIGHBORHOOD STORIES</a></li>
+                            <li><a href="#">PARKS</a></li>
+                            <li><a href="#">INFRASTRUCTURE</a></li>
+                            <li><a href="#">ECONOMIC DEVELOPMENT</a></li>
+                            <li><a href="#">ENVIRONMENT</a></li>
+                            <li><a href="#">EDUCATION</a></li>                            
+                        </ul>
+                    </div>
+                    <div class="large-3 columns">
+                        <h5>LATEST</h5> 
+                        <ul>
+                            <li><a href="#">BLOG</a></li>
+                            <li><a href="#">LIKE US ON FACEBOOK</a></li>
+                            <li><a href="#">FOLLOW US ON TWITTER</a></li>
+                        </ul>
+                    </div>                    
+                </div>
+            </div>
+        </footer>
+ -->
+        
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/foundation/js/foundation.min.js"></script>
+        <script src="js/app.js"></script>        
+        
+    </body>
+</div>

@@ -1,0 +1,129 @@
+@import "app.scss";
+@import "fonts.scss";
+
+body { font-family: "ff-din-web",sans-serif; }
+
+ul { list-style: $noStyle; margin-left: 0 !important; }
+
+header { max-height: 100px; padding: 20px 0;
+    form { line-height: .4rem;  
+        input[type="text"], button { margin: 0; max-width: 160px; display: inline-block; }
+        button { margin-top: 0; padding-top: .7rem; padding-bottom: .5rem; font-size: 86%; font: italic 400 14px/20px "museo-slab", san-serif !important;  text-transform: uppercase; }
+    }
+    .socialLinks { margin-top: 12px; font: normal 400 11px/1px "museo-slab", san-serif !important; 
+        span { font: normal 16px/1px "socialico", sans-serif; }
+        a { display: inline-block; }
+    }
+    &.bottomBase { border-bottom: 5px solid $primary-color; }
+}
+nav{ margin: 0 !important; padding: 0 !important; max-width: 100% !important; background: $primary-color; border-bottom: 5px solid $baseMutedBlue;
+    .row { 
+        ul { margin-top: 20px;
+            li  { font: normal 700 29px/30px "brandon-grotesque", san-serif !important; display: inline-block; padding-right: 10%;
+                a { color: $white; }
+            }
+        }
+    }
+}
+.heroContainer { width: 100%; margin-bottom: 10px; position: relative; 
+    &.home, &.map { height: 540px; }
+    &.interior { height: 335px; 
+        &.issues { background: transparent url(../images/bg-header-issues.jpg) no-repeat 0 0; }
+        h2 { font: normal 400 120px/100px "museo-slab", san-serif !important; color: $white; text-transform: uppercase; }
+        h2#economicDev { background: transparent url(../images/icon-graph.png) no-repeat 0 0; }
+        } 
+    #googlemaps, #dvMap, #map { 
+      height: 100%; 
+      width: 100%; 
+      position:absolute; 
+      top: 0; 
+      left: 0; 
+      z-index: 0;
+    }
+    .infoBox { 
+        h5 { font: normal 700 14px/1px "museo-slab", san-serif !important; color: $baseMutedBlue; }
+        p { max-width: 360px; color: $primary-color; font-size: 11px; }
+        p:after { width: 10em; }
+        img { padding-right: 20px; min-width: 100px; float: right;  }
+        p.addy { color: $baseMutedBlue; float: none !important;}
+        a { color: $primaryRed; float: left; }
+    }
+    .geoBox { max-width: 412px; height: 387px; margin-top: $verticalPad; padding: 30px; position: absolute; bottom: 0; background: rgba(0,159,255,.9); 
+        h2, p { color: $white; }
+        h2 { font: normal 700 24px/24px "brandon-grotesque", san-serif !important; }
+        form {  
+            input, button { display: inline-block; }
+            input.geoEmail {  }
+            input.geoZip { max-width: 223px; }            
+            button { margin-top: 0; padding-top: .5rem; padding-bottom: .4rem; font-size: 86%; font: italic 400 14px/25px "museo-slab", san-serif !important; text-transform: uppercase; background: $primaryRed !important; }
+        }
+        .iconList {
+            img {  }
+            ul {
+                li { max-width: 15%; display: inline-block; 
+                    input[type=checkbox] { display:none; margin:10px; }
+                    input[type=checkbox] + label {
+                        display:inline-block;
+                        margin:-2px;
+                        padding: 4px ;
+                        opacity: .5;
+                    }
+                    input[type=checkbox] + label:hover,  
+                    input[type=checkbox]:checked + label { opacity: 1; }
+                }
+                li:hover { opacity: 1; }
+            }
+        }
+    }
+}
+
+footer { margin: 0 !important; padding: $verticalPad 0 !important; max-width: 100% !important; background: $tertiary-color;
+    h5 { color: $white; font: normal 700 20px/24px "brandon-grotesque", san-serif !important; }
+    ul {
+        li {  font: normal 400 16px/22px "museo-slab", san-serif !important;
+            a { color: $white; }
+        }
+    }
+}
+
+.contentContainer { padding: $verticalPad 0; 
+    .touts { padding-bottom: $verticalPad; }
+    .postBlurb {
+        h2, h3 { color: $primary-color; }
+        h3 { font: italic 700 29px/30px "museo-slab", san-serif !important; }
+        .readMore { font: italic 700 20px/30px "museo-slab", san-serif !important; color: $primaryRed; font-size: 125%; }
+        .tagBox { 
+            li { display: inline-block; font: normal 400 12px/30px "museo-slab", san-serif !important; 
+                a { color: $baseMutedBlue; }
+            }
+            li:after { content: "|"; padding: 0 .5em; }
+        }
+    }
+    .headline h3 { padding-bottom: 50px; font: normal 400 30px/32px "museo-slab", san-serif !important; color: $primary-color; font-size: 125%; }
+}
+.rightRail { 
+    ul { 
+        li { padding: 14px 0 28px; font: normal 16px "museo-slab", sans-serif !important;
+            span{ min-width: 95px; vertical-align: top; float: left;  clear: both; 
+                &.picto { font: normal 70px/1px "picto", sans-serif; }
+                &.socialico { font: normal 80px/1px "socialico", sans-serif; }
+                &.news { padding-top: 21px; } 
+                &.face { padding-top: 15px; }
+                &.tweet { padding-top: 20px; }
+                &.magnify { padding-top: 25px; }
+                &.share { padding-top: 17px; }
+                &.donate { padding-top: 20px; }
+            }
+            a { color: $tertiary-color; }
+            a:hover { color: $primary-color; }
+            a.donateMod { color: $primaryRed; }
+        }
+    }
+}
+
+form { 
+    .contact {  }
+}
+
+
+

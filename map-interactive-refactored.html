@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
+<head> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundation</title>
+    <link rel="stylesheet" href="css/site.css" />
+    <!--<script src="//use.typekit.net/vvt4yoq.js"></script> --> <!-- Metronoome3 account to be reactivated upon launch -->
+    <!--<script>try{Typekit.load();}catch(e){}</script>-->
+    
+    <script src="//use.typekit.net/amx7nmd.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>        
+            <script src="js/jquery.js"></script>
+
+    <script src="js/modernizr.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn-history/r358/trunk/infobox/src/infobox.js"></script>
+    <script type="text/javascript">
+$(window).load(function(){
+
+   var markers = new Array();
+
+    var iconSrc = {};
+    
+    iconSrc['education'] = 'images/education.png';
+    iconSrc['economics'] = 'images/economics.png';
+    iconSrc['environment'] = 'images/environment.png';
+    iconSrc['parks'] = 'images/parks.png';
+    iconSrc['infrastructure'] = 'images/infrastructure.png';
+    iconSrc['stories'] = 'images/stories.png';
+
+    //Further down, in new google.maps.Marker, the icon line becomes:
+    // icon: iconSrc[locations[i][2]]
+    
+    
+    var locations = [
+        ['Boonton Town', '973-402-9410, ext. 631', 'education', 40.902, -74.407, 1],
+        ['Boonton Township', '973-331-3336', 'education', 40.933,-74.425,2 ],
+        ['Butler Borough', '973-835-8885', 'education',40.999497, -74.346326, 3 ],
+        ['Chatham Boro and Chatham Township', '973-635-4565', 'education',40.7372, -74.4253,4 ],
+
+
+        ['Boonton Post', '210 Main St.<br>Boonton, NJ 07005', 'economics',40.902857, -74.407712,32 ],
+        ['John A. Dean Post', '15 Kiel Ave.<br>Butler, NJ 07403', 'economics',41.00276744260799, -74.35810804367065,33 ],
+        ['Chatham Post', 'Box 11<br>Chatham, NJ 07928', 'economics',40.73794, -74.38449,34 ],
+        ['Bernays Apgar Post', 'P.O. Box 342<br>Chester, NJ 07930', 'economics',40.78721, -74.68885,35 ],
+
+
+        ['Boonton Post #242', '221 Main St.<br>Boonton, NJ 07005', 'environment',40.903020287948806, -74.40771818161011,53 ],
+        ['Denville Post #2519', '71 Ford Rd.<br>Denville, NJ 07834', 'environment',40.91534490699327, -74.48998689651489,54 ],
+        ['Hanover Post #5351', '750 State Route 10<br>Hanover Twp., NJ 07981', 'environment',40.82603680244624, -74.42166566848755,55 ],
+        ['Kenvil Post #2833', '16 High St.<br>Kenvil, NJ 07847', 'environment',40.87683907004174, -74.63418245315552,56 ],
+
+
+        ['Denville', 'Cooks Pond Senior Housing, 455 Diamond Spring Rd.<br>(973) 983-1142; open Monday, Wednesday, Friday', 'parks',40.9132855581483, -74.45492506027222,68 ],
+        ['Dover', 'St Johns Episcopal Church, 11 So. Bergen St.<br>(973) 361-9376; open Monday and Thursday', 'parks',40.88496706239981, -74.5555830001831,69 ],
+        ['Jefferson Township', 'Senior Citizens Services, 54 Schoolhouse Rd.<br>(973) 208-0788; open Monday, Tuesday, Thursday', 'parks',41.028607409403065, -74.52790260314941,70 ],
+        ['Long Hill Township',  'The Senior Citizens Club, 769 Valley Rd.<br>(908) 626-1606; open Monday and Friday', 'parks',40.67377066571321, -74.46979522705078,71],
+
+
+        ['Montville', 'Montville Senior House, 356 Main Rd.<br>(973) 316-8560; open Tuesday and Thursday', 'infrastructure',40.91600972245032, -74.36658382415771,73 ],
+        ['Morris Mews', 'Dean Gallo Congregate Housing, 99 Ketch Rd.<br>(973) 540-8063; open Monday through Friday', 'infrastructure',40.83020957464309, -74.5130968093872,74 ],
+        ['Morristown', 'Wetmore Towers, 31 Early St.<br>(973) 644-0343; open Monday through Friday', 'infrastructure',40.80247276179082, -74.48412895202637,75 ],
+        ['Parsippany', 'Parsippany Community Center, 1130 Knoll Rd.<br>(973) 884-1868; open Monday through Friday', 'infrastructure',40.87304242027383, -74.39115285873413,77 ]
+    ]
+
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 10,
+      center: new google.maps.LatLng(40.7967667, -74.4815438),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+    var infowindow = new google.maps.InfoWindow();
+    
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {  
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][3], locations[i][4]),
+        map: map,
+        icon: iconSrc[locations[i][2]]
+      });
+
+      markers.push(marker);
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]+"<br />"+locations[i][2]+"<br />"+locations[i][1]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+    // == shows all markers of a particular category, and ensures the checkbox is checked ==
+      function show(category) {
+        for (var i=0; i<locations.length; i++) {
+          if (locations[i][2] == category) {
+            markers[i].setVisible(true);
+          }
+        }
+      }
+      // == hides all markers of a particular category, and ensures the checkbox is cleared ==
+
+      function hide(category) {
+        for (var i=0; i<locations.length; i++) {
+          if (locations[i][2] == category) {
+            markers[i].setVisible(false);
+          }
+        }
+      }
+      // == show or hide the categories initially ==
+
+        hide("education");
+        hide("environment");
+        hide("economics");
+        hide("parks");
+        hide("infrastructure");
+        hide("stories");
+
+    $(".initiative").click(function(){
+        var cat = $(this).attr("data-target_category");
+            // If checked
+        $().show(cat);
+        alert('what it is');
+                $('[data-category=' + target_category + ']').show();
+        return false;
+        // $(cat)    
+//             
+//         if ($(this).is(":checked"))
+//         {
+//             show(cat);
+//         }
+//         else
+//         {
+//             hide(cat);
+//         }
+    });
+    
+    $(".findUs").click(function(){
+        alert("I love you, not");
+    });
+
+
+});//]]>  
+
+    </script>
+
+</head>
+<body onload="initialize()"> 
+
+        <div class="large-15">
+            <div class="heroContainer map">
+                <div id="map"></div>
+                    <div class="row">
+                        <div class="geoBox">
+                            <h2>WORKING WITH EVERY NEIGHBORHOOD FOR A BETTER AND STRONGER FUTURE.</h2>
+                            <p>See what we’re working on near you.</p>
+ <!--<fieldset id="form">
+    <p>
+        <label>Enter Zip Code</label>
+        <input type="text" id="zip" name="zip" />
+    </p>
+
+    <p>
+
+    <input class="checkbox" id="education" name="Deducation" type="checkbox" value="education" />
+    <label for="education">education</label>
+    </p>
+    <p>
+    <input class="checkbox" id="economics" name="economics" type="checkbox" value="economics" />
+    <label for="economics">economics</label>
+    </p>
+    <p>
+    <input class="checkbox" id="environment" name="environment" type="checkbox" value="environment" />
+    <label for="environment">environment</label>
+    </p>
+    <p>
+
+    <input class="checkbox" id="parks" name="parks" type="checkbox" value="parks" />
+    <label for="parks">parks</label>
+
+    </p>
+    <p>
+    <input class="checkbox" id="infrastructure" name="infrastructure" type="checkbox" value="infrastructure" />
+    <label for="infrastructure">Veterans of Foreign Wars</label>
+    </p>
+    <p>
+
+    <input class="checkbox" id="stories" name="stories" type="checkbox" value="stories" />
+    <label for="stories">stories</label>
+
+    </p>    
+
+</fieldset>-->
+                            <form action="#">
+                                <input type="text" class="geoEmail" name="geoEmail" placeholder="Email">
+                                <input type="text" class="geoZip" name="geoZip" placeholder="Zip code">   
+                                <button class="findUs">find us</button>
+                            </form>        
+                            <p>NEIGHBORHOOD INITIATIVES</p>
+                            
+
+
+                            <div class="iconList">
+                                <ul>
+                                   <!--  <li><input type="checkbox" id="storiesbox" onclick="boxclick(this,'stories')" /><img src="images/icon-play.png" alt="Play Video" /></li>
+                                    <li><input type="checkbox" id="environmentbox" onclick="boxclick(this,'environment')" /><img src="images/icon-trees.png" alt="Play Video" /> </li>
+                                    <li><input type="checkbox" id="educationbox" onclick="boxclick(this,'education')" /><img src="images/icon-road.png" alt="Play Video" /></li>
+                                    <li><input type="checkbox" id="economicbox" onclick="boxclick(this,'economic')" /><img src="images/icon-graph.png" alt="Play Video" /></li>
+                                    <li><input type="checkbox" id="infrastructurebox" onclick="boxclick(this,'infrastructure')" /><img src="images/icon-plant.png" alt="Play Video" /></li>
+                                    <li><input type="checkbox" id="parksbox" onclick="boxclick(this,'parks')" /><img src="images/icon-book.png" alt="Play Video" /></li>
+ -->
+                                    
+                                    <li><a class="initiative" href="#" data-target_category="education"><img src="images/icon-play.png" alt="Play Video" /></a></li>
+                                    <li><a class="initiative" href="#" data-target_category="economics"><img src="images/icon-trees.png" alt="Play Video" /></a></li>
+                                    <li><a class="initiative" href="#" data-target_category="environment"><img src="images/icon-road.png" alt="Play Video" /></a></li>
+                                    <li><a class="initiative" href="#" data-target_category="parks"><img src="images/icon-graph.png" alt="Play Video" /></a></li>
+                                    <li><a class="initiative" href="#" data-target_category="infrastructure"><img src="images/icon-plant.png" alt="Play Video" /></a></li>
+                                    <li><a class="initiative" href="#" data-target_category="stories"><img src="images/icon-book.png" alt="Play Video" /></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="row">
+                <div class="footerContent">
+                    <div class="large-3 columns">
+                        <img src="images/logo-footer.png" />
+                    </div>
+                    <div class="large-3 columns">
+                        <h5>TAKE ACTION</h5> 
+                        <ul>
+                            <li><a href="#">SIGN UP</a></li>
+                            <li><a href="#">SHARE YOUR STORY</a></li>
+                            <li><a href="#">SEE PROGRESS IN YOUR NEIGHBORHOOD</a></li>
+                            <li><a href="#">DONATE</a></li>
+                        </ul>
+                    </div>
+                    <div class="large-3 columns">
+                        <h5>FACTS</h5> 
+                        <ul>
+                            <li><a href="#">ABOUT</a></li>
+                            <li><a href="#">NEIGHBORHOOD STORIES</a></li>
+                            <li><a href="#">PARKS</a></li>
+                            <li><a href="#">INFRASTRUCTURE</a></li>
+                            <li><a href="#">ECONOMIC DEVELOPMENT</a></li>
+                            <li><a href="#">ENVIRONMENT</a></li>
+                            <li><a href="#">EDUCATION</a></li>                            
+                        </ul>
+                    </div>
+                    <div class="large-3 columns">
+                        <h5>LATEST</h5> 
+                        <ul>
+                            <li><a href="#">BLOG</a></li>
+                            <li><a href="#">LIKE US ON FACEBOOK</a></li>
+                            <li><a href="#">FOLLOW US ON TWITTER</a></li>
+                        </ul>
+                    </div>                    
+                </div>
+            </div>
+        </footer>
+        
+        <script src="js/foundation.js"></script>
+        <script src="js/app.js"></script>        
+
+  </body>
+
+</html>

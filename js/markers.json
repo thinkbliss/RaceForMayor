@@ -1,0 +1,38 @@
+{"markers":
+    [ {
+        "tags":"Breakfast", 
+        "latitude":59.33283, 
+        "longitude": 18.064519, 
+        "title":"Burger King Sergels Torg", 
+        "address":"Sergels Torg  1, 111 57 Stockholm", 
+        "phone":"08219894"},
+        {
+        "tags":"Lunch", 
+        "latitude": 59.333802, 
+        "longitude":18.056623, 
+        "title": "Burger King Vasagatan", 
+        "address":"Vasagatan 15-17 111, 20 Stockholm", 
+        "phone":"08102665" }, 
+        {
+        "tags":"Buffet", 
+        "latitude":55.706206, 
+        "longitude":13.190514, 
+        "title":"Burger King Lund", 
+        "address":"Knut den Stores gata 2, 222 21 Lund", 
+        "phone":"046184100"},
+        {
+        "tags":"A la carte", 
+        "latitude": 55.426597, 
+        "longitude":13.249855, 
+        "title":"Burger King HÃ¶llviken", 
+        "address":"KungstorpsvÃ¤gen 8, 236 32 HÃ¶llviken", 
+        "phone":"040457185"},
+        {
+        "tags":"Buffet, A la carte", 
+        "latitude": 58.417448, 
+        "longitude":15.649509, 
+        "title":"Burger King LinkÃ¶ping", 
+        "address":"Stora Torget 5, 582 19 LinkÃ¶ping", 
+        "phone":"013314685"} 
+    ]
+} 

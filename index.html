@@ -1,0 +1,204 @@
+<!doctype html>
+<html class="no-js" lang="en">
+     <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Rahm for Chicago</title>
+        <link rel="stylesheet" href="css/site.css" />
+        <!--<script src="//use.typekit.net/vvt4yoq.js"></script> --> <!-- Metronoome3 account to be reactivated upon launch -->
+        <!--<script>try{Typekit.load();}catch(e){}</script>-->
+        
+        <script src="//use.typekit.net/amx7nmd.js"></script>
+        <script>try{Typekit.load();}catch(e){}</script>        
+        
+    <script src="js/modernizr.js"></script>
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn-history/r358/trunk/infobox/src/infobox.js"></script>
+    <script type="text/javascript" src="js/map.js"></script>               
+            
+    </head>
+    <body onload="initialize()">
+                <header class="bottomBase">
+            <div class="row">
+                <div class="large-12 column">
+                    <div class="left">
+                        <h1 class="titleBar"><img src="images/logo-title.jpg" alt="Rahm for Chicago" /></h1>     
+                    </div>
+                    <div class="large-6 column right">
+                        <form>
+                            <input type="text" class="signUpEmail-header" name="signUpEmail" placeholder="Email">
+                            <input type="text" class="signUpZip-header" name="signUpZip" placeholder="Zip code"> 
+                            <button>Sign up</button>
+                        </form>
+                        <div class="socialLinks"><a class="headerSocial"><span>F</span>LIKE US</a> <a class="headerSocial fb"><span>L</span>FOLLOW US</a></div>
+                    </div>         
+                </div>
+            </div>
+        </header>        <div class="large-15">
+            <div class="heroContainer map">
+                <div id="map"></div>
+                <div class="row">
+                    <div class="geoBox">
+                        <h2>WORKING WITH EVERY NEIGHBORHOOD FOR A BETTER AND STRONGER FUTURE.</h2>
+                        <p>See what we’re working on near you.</p>
+                        <form action="#">
+                            <input type="text" class="geoEmail" name="geoEmail" placeholder="Email">
+                            <input type="text" class="geoZip" name="geoZip" placeholder="Zip code">   
+                            <button>find us</button>
+                        </form>        
+                        <p>NEIGHBORHOOD INITIATIVES</p>
+                        <div class="iconList">
+                            <ul>
+                                <li>
+                                    <input type="checkbox" id="storiesbox" onclick="boxclick(this,'stories')" />
+                                    <label for="storiesbox"><img src="images/icon-play.png" alt="" /></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="parksbox" onclick="boxclick(this,'parks')" />
+                                    <label for="parksbox"><img src="images/icon-trees.png" alt="" /></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="infrastructurebox" onclick="boxclick(this,'infrastructure')" />
+                                    <label for="infrastructurebox"><img src="images/icon-road.png" alt="" /></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="economicbox" onclick="boxclick(this,'economic')" />
+                                    <label for="economicbox"><img src="images/icon-graph.png" alt="" /></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="environmentbox" onclick="boxclick(this,'environment')" />
+                                    <label for="environmentbox"><img src="images/icon-plant.png" alt="" /></a>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="educationbox" onclick="boxclick(this,'education')" />
+                                    <label for="educationbox"><img src="images/icon-book.png" alt="" /></label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                <nav>
+            <div class="row">
+                <ul>
+                    <li><a href="#">TAKE ACTION</a></li>
+                    <li><a href="#">FACTS</a></li>
+                    <li><a href="#">LATEST</a></li>       
+                </ul>
+            </div>
+        </nav>        <!-- 
+        <nav>
+            <div class="row">
+                <ul>
+                    <li><a href="#">TAKE ACTION</a></li>
+                    <li><a href="#">FACTS</a></li>
+                    <li><a href="#">LATEST</a></li>       
+                </ul>
+            </div>
+        </nav>
+        -->
+        
+        <div class="contentContainer">
+            <div class="row touts">
+                <div class="large-4 columns">
+                    <img src="images/fpo-tout.jpg"/>
+                </div>
+
+                <div class="large-4 columns">
+                    <img src="images/fpo-tout.jpg"/>
+                </div>
+
+                <div class="large-4 columns">
+                    <img src="images/fpo-tout.jpg"/>
+                </div>
+            </div> 
+            <div class="row">
+                                <div class="large-6 columns postList">
+                    <div class="postBlurb">
+                        <h3>Blog Post 1 Lorem Ipsum Dolor</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <a class="readMore" href="#">Read more &gt;</a>
+                        <ul class="tagBox">
+                            <li><a href="#">TAG 1</a></li>
+                            <li><a href="#">TAG 2</a></li>
+                        </ul>
+                    </div>
+                    <div class="postBlurb">
+                        <h3>Blog Post 2 Lorem Ipsum Dolor</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <img src="images/fpo-blog-post.jpg" alt="" />
+                        <a class="readMore" href="#">Read more &gt;</a>
+                        <ul class="tagBox">
+                            <li><a href="#">TAG 1</a></li>
+                            <li><a href="#">TAG 2</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="postBlurb">
+                        <h3>Blog Post 3 Lorem Ipsum Dolor</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <a class="readMore" href="#">Read more &gt;</a>
+                        <ul class="tagBox">
+                            <li><a href="#">TAG 1</a></li>
+                            <li><a href="#">TAG 2</a></li>
+                        </ul>
+                    </div>                                        
+                </div>                <div class="large-4 columns right rightRail">
+                    <ul>
+                        <li><a href="#"><span class="picto news">m</span>SIGN UP, BE THE<br/>FIRST TO KNOW</a></li>
+                        <li><a href="#"><span class="picto face">G</span>LIKE US</a></li>
+                        <li><a href="#"><span class="socialico tweet">L</span>FOLLOW US</a></li>
+                        <li><a href="#"><span class="picto magnify">y</span>SEE PROGRESS IN<br/>YOUR NEIGHBORHOOD</a></li>
+                        <li><a href="#"><span class="picto share">b</span>SHARE YOUR STORY</a></li>
+                        <li><a class="donateMod" href="#"><span class="picto donate">$</span>DONATE</a></li>
+                    </ul>
+                </div>                
+            </div>
+        </div>
+                <footer>
+            <div class="row">
+                <div class="footerContent">
+                    <div class="large-3 columns">
+                        <img src="images/logo-footer.png" />
+                    </div>
+                    <div class="large-3 columns">
+                        <h5>TAKE ACTION</h5> 
+                        <ul>
+                            <li><a href="#">SIGN UP</a></li>
+                            <li><a href="#">SHARE YOUR STORY</a></li>
+                            <li><a href="#">SEE PROGRESS IN YOUR NEIGHBORHOOD</a></li>
+                            <li><a href="#">DONATE</a></li>
+                        </ul>
+                    </div>
+                    <div class="large-3 columns">
+                        <h5>FACTS</h5> 
+                        <ul>
+                            <li><a href="#">ABOUT</a></li>
+                            <li><a href="#">NEIGHBORHOOD STORIES</a></li>
+                            <li><a href="#">PARKS</a></li>
+                            <li><a href="#">INFRASTRUCTURE</a></li>
+                            <li><a href="#">ECONOMIC DEVELOPMENT</a></li>
+                            <li><a href="#">ENVIRONMENT</a></li>
+                            <li><a href="#">EDUCATION</a></li>                            
+                        </ul>
+                    </div>
+                    <div class="large-3 columns">
+                        <h5>LATEST</h5> 
+                        <ul>
+                            <li><a href="#">BLOG</a></li>
+                            <li><a href="#">LIKE US ON FACEBOOK</a></li>
+                            <li><a href="#">FOLLOW US ON TWITTER</a></li>
+                        </ul>
+                    </div>                    
+                </div>
+            </div>
+        </footer>
+        
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/foundation/js/foundation.min.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>
